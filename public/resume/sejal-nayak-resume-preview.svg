@@ -1,0 +1,57 @@
+<svg width="720" height="920" viewBox="0 0 720 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="920" rx="34" fill="#F8FBFF"/>
+  <rect x="0" y="0" width="720" height="172" rx="34" fill="url(#header)"/>
+  <circle cx="614" cy="78" r="86" fill="#22D3EE" opacity="0.16"/>
+  <circle cx="546" cy="146" r="122" fill="#2563EB" opacity="0.16"/>
+  <text x="50" y="76" fill="white" font-family="Arial, sans-serif" font-size="44" font-weight="700">Sejal Nayak</text>
+  <text x="52" y="116" fill="#CFFAFE" font-family="Arial, sans-serif" font-size="21" font-weight="700">Senior Software Engineer</text>
+  <text x="52" y="146" fill="#E0F2FE" font-family="Arial, sans-serif" font-size="15">+91-8955191059 | sejalnayak2001@gmail.com | LinkedIn | LeetCode | GitHub</text>
+
+  <text x="50" y="220" fill="#0F172A" font-family="Arial, sans-serif" font-size="18" font-weight="800">WORK EXPERIENCE</text>
+  <rect x="50" y="240" width="620" height="156" rx="22" fill="#EFF6FF"/>
+  <text x="74" y="274" fill="#1E3A8A" font-family="Arial, sans-serif" font-size="17" font-weight="800">Senior Software Engineer - Amagi</text>
+  <text x="74" y="300" fill="#475569" font-family="Arial, sans-serif" font-size="13" font-weight="700">Bengaluru | July 2025 - Present</text>
+  <text x="74" y="330" fill="#334155" font-family="Arial, sans-serif" font-size="13">Serverless media ingestion with S3 events and Lambda for broadcast playout.</text>
+  <text x="74" y="354" fill="#334155" font-family="Arial, sans-serif" font-size="13">Chaos engineering with LitmusChaos, Kubernetes, and AWS FIS.</text>
+  <text x="74" y="378" fill="#334155" font-family="Arial, sans-serif" font-size="13">DAZN Linear BXF schedule ingestion, playlist generation, and metadata enrichment.</text>
+
+  <rect x="50" y="418" width="620" height="188" rx="22" fill="#ECFEFF"/>
+  <text x="74" y="452" fill="#155E75" font-family="Arial, sans-serif" font-size="17" font-weight="800">Software Developer - KreditBee</text>
+  <text x="74" y="478" fill="#475569" font-family="Arial, sans-serif" font-size="13" font-weight="700">Bengaluru | July 2023 - July 2025</text>
+  <text x="74" y="508" fill="#334155" font-family="Arial, sans-serif" font-size="13">Freshdesk JSON normalization into 10-15 relational tables for analytics.</text>
+  <text x="74" y="532" fill="#334155" font-family="Arial, sans-serif" font-size="13">Premium Personal Salaried Loan intent submission for Rs. 3L to Rs. 10L.</text>
+  <text x="74" y="556" fill="#334155" font-family="Arial, sans-serif" font-size="13">Golang notification systems on AWS Fargate, PDF templates, and S3 uploads.</text>
+  <text x="74" y="580" fill="#334155" font-family="Arial, sans-serif" font-size="13">React + Go InAppFeedback module during internship.</text>
+
+  <text x="50" y="654" fill="#0F172A" font-family="Arial, sans-serif" font-size="18" font-weight="800">SKILLS</text>
+  <g>
+    <rect x="50" y="678" width="104" height="38" rx="19" fill="#DBEAFE"/>
+    <text x="80" y="702" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="14" font-weight="700">Golang</text>
+    <rect x="166" y="678" width="104" height="38" rx="19" fill="#CFFAFE"/>
+    <text x="196" y="702" fill="#0E7490" font-family="Arial, sans-serif" font-size="14" font-weight="700">Python</text>
+    <rect x="282" y="678" width="86" height="38" rx="19" fill="#DBEAFE"/>
+    <text x="311" y="702" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="14" font-weight="700">AWS</text>
+    <rect x="380" y="678" width="132" height="38" rx="19" fill="#CFFAFE"/>
+    <text x="412" y="702" fill="#0E7490" font-family="Arial, sans-serif" font-size="14" font-weight="700">Kubernetes</text>
+    <rect x="524" y="678" width="94" height="38" rx="19" fill="#DBEAFE"/>
+    <text x="555" y="702" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="14" font-weight="700">MySQL</text>
+    <rect x="50" y="730" width="120" height="38" rx="19" fill="#CFFAFE"/>
+    <text x="82" y="754" fill="#0E7490" font-family="Arial, sans-serif" font-size="14" font-weight="700">REST APIs</text>
+    <rect x="182" y="730" width="154" height="38" rx="19" fill="#DBEAFE"/>
+    <text x="214" y="754" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="14" font-weight="700">Distributed Systems</text>
+    <rect x="348" y="730" width="112" height="38" rx="19" fill="#CFFAFE"/>
+    <text x="381" y="754" fill="#0E7490" font-family="Arial, sans-serif" font-size="14" font-weight="700">MongoDB</text>
+  </g>
+
+  <text x="50" y="816" fill="#0F172A" font-family="Arial, sans-serif" font-size="18" font-weight="800">EDUCATION &amp; CERTIFICATIONS</text>
+  <text x="50" y="850" fill="#334155" font-family="Arial, sans-serif" font-size="14">IIIT Bhopal - B.Tech Computer Science and Engineering, CGPA 8.56/10</text>
+  <text x="50" y="876" fill="#334155" font-family="Arial, sans-serif" font-size="14">AWS Cloud Practitioner | AWS Certified Solutions Architect</text>
+
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="720" y2="172" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="0.46" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+</svg>

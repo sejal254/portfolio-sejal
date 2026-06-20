@@ -1,0 +1,121 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 6772 >>
+stream
+0 0 0 rg
+BT /F2 20 Tf 220.00 804.00 Td (Sejal Nayak) Tj ET
+BT /F1 8.8 Tf 104.00 786.00 Td (+91-8955191059 | sejalnayak2001@gmail.com | LinkedIn | LeetCode | GitHub) Tj ET
+BT /F2 11 Tf 42.00 760.00 Td (WORK EXPERIENCE) Tj ET
+42.00 756.00 511.00 0.6 re f
+BT /F2 9.4 Tf 42.00 742.00 Td (Senior Software Engineer - Amagi) Tj ET
+BT /F1 8.4 Tf 390.00 742.00 Td (Bengaluru | July 2025 - Present) Tj ET
+51.00 731.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 729.00 Td (Designed a serverless media ingestion system leveraging S3 event notification and Lambda function to) Tj ET
+BT /F1 8.3 Tf 62.00 718.00 Td (automate asset creation/processing, eliminating manual upload workflow for broadcast playout.) Tj ET
+51.00 707.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 705.00 Td (Implemented chaos engineering and resilience testing using LitmusChaos and AWS Fault Injection Simulator) Tj ET
+BT /F1 8.3 Tf 62.00 694.00 Td (\(FIS\) to simulate failures such as network loss, Kubernetes pod deletions, RDS outages, and PubNub API) Tj ET
+BT /F1 8.3 Tf 62.00 683.00 Td (disruptions, enabling proactive identification of system weaknesses under stress.) Tj ET
+51.00 672.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 670.00 Td (Designed and developed backend services for media workflow and broadcast automation platforms using) Tj ET
+BT /F1 8.3 Tf 62.00 659.00 Td (Golang, Python, Ruby on Rails, and AWS.) Tj ET
+51.00 648.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 646.00 Td (Built serverless media ingestion workflows utilizing Amazon S3 event notifications and AWS Lambda for) Tj ET
+BT /F1 8.3 Tf 62.00 635.00 Td (automated media asset processing.) Tj ET
+51.00 624.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 622.00 Td (Automated chaos engineering and resilience testing workflows with Litmus and Kubernetes, enhancing) Tj ET
+BT /F1 8.3 Tf 62.00 611.00 Td (operational efficiency across distributed systems.) Tj ET
+51.00 600.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 598.00 Td (Worked on DAZN Linear playlist processing pipelines, enabling automated ingestion of BXF schedules,) Tj ET
+BT /F1 8.3 Tf 62.00 587.00 Td (playlist generation, metadata enrichment, and downstream playout integration.) Tj ET
+BT /F2 9.4 Tf 42.00 570.00 Td (Software Developer - KreditBee) Tj ET
+BT /F1 8.4 Tf 390.00 570.00 Td (Bengaluru | July 2023 - July 2025) Tj ET
+51.00 559.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 557.00 Td (Designed and implemented a scalable data pipeline to parse and normalize Freshdesk customer support JSON) Tj ET
+BT /F1 8.3 Tf 62.00 546.00 Td (data into 10-15 relational database tables, enabling analytical queries that identified recurring) Tj ET
+BT /F1 8.3 Tf 62.00 535.00 Td (customer issues and drove product and support improvements.) Tj ET
+51.00 524.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 522.00 Td (Designed and implemented the Premium Personal Salaried Loan Intent Submission feature, focusing on) Tj ET
+BT /F1 8.3 Tf 62.00 511.00 Td (accurate data intake, validation workflows, and secure database storage for loan applications ranging) Tj ET
+BT /F1 8.3 Tf 62.00 500.00 Td (from INR 3,00,000 to INR 10,00,000.) Tj ET
+51.00 489.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 487.00 Td (Developed WhatsApp and email notification systems using GoLang on AWS Fargate, enhancing error detection) Tj ET
+BT /F1 8.3 Tf 62.00 476.00 Td (and resolution efficiency.) Tj ET
+51.00 465.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 463.00 Td (Developed a PDF templatization service to streamline the generation of user documents \(LFA, Sanction, CSR) Tj ET
+BT /F1 8.3 Tf 62.00 452.00 Td (reports\) within the KreditBee App. Consolidated redundant codebase by implementing a service that) Tj ET
+BT /F1 8.3 Tf 62.00 441.00 Td (converts templated Markdown files to PDFs, supporting dynamic template variables. Developed a preview) Tj ET
+BT /F1 8.3 Tf 62.00 430.00 Td (system for generated PDFs.) Tj ET
+51.00 419.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 417.00 Td (Developed and implemented a secure and efficient bulk insurance data upload solution, using S3 pre-signed) Tj ET
+BT /F1 8.3 Tf 62.00 406.00 Td (URLs for CSV file handling and seamless database updates.) Tj ET
+51.00 395.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 393.00 Td (Developed the admin panel to manage healthcare plans and Freshdesk details, streamlining updates and) Tj ET
+BT /F1 8.3 Tf 62.00 382.00 Td (additions for administrators.) Tj ET
+BT /F2 9.4 Tf 42.00 365.00 Td (Software Developer Intern - KreditBee) Tj ET
+BT /F1 8.4 Tf 390.00 365.00 Td (Feb 2023 - July 2023) Tj ET
+51.00 354.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 352.00 Td (Developed an InAppFeedback module with a React.js frontend and a Go backend using the Gin framework,) Tj ET
+BT /F1 8.3 Tf 62.00 341.00 Td (Beego ORM, and MySQL to enable efficient feedback submission, storage, and REST API operations.) Tj ET
+BT /F2 9.4 Tf 42.00 324.00 Td (AWS Cloud Intern - F13 Technologies) Tj ET
+BT /F1 8.4 Tf 390.00 324.00 Td (May 2022 - July 2022) Tj ET
+51.00 313.00 1.65 0 360 arc f
+BT /F1 8.3 Tf 62.00 311.00 Td (Worked with AWS services, including EC2, Lambda, S3, IAM, VPC, and CloudWatch, to configure and manage) Tj ET
+BT /F1 8.3 Tf 62.00 300.00 Td (cloud infrastructure during internship.) Tj ET
+BT /F2 11 Tf 42.00 283.00 Td (SKILLS & INTEREST) Tj ET
+42.00 279.00 511.00 0.6 re f
+51.00 267.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 265.00 Td (Programming Languages: Golang, Python, SQL, C++, Ruby) Tj ET
+51.00 254.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 252.00 Td (Backend & Architecture: REST APIs, Event-Driven Systems, Distributed Systems) Tj ET
+51.00 241.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 239.00 Td (Cloud & DevOps: AWS \(S3, Lambda, Fargate, RDS, EC2, IAM\), AWS Fault Injection Simulator \(FIS\)) Tj ET
+51.00 228.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 226.00 Td (Databases: MySQL, MongoDB, SQLite) Tj ET
+51.00 215.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 213.00 Td (CS Fundamentals: DBMS, Operating Systems, Computer Networks) Tj ET
+51.00 202.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 200.00 Td (AI Tools: ChatGPT, GitHub Copilot, Roo Code, Cursor, Claude Code) Tj ET
+BT /F2 11 Tf 42.00 187.00 Td (EDUCATION) Tj ET
+42.00 183.00 511.00 0.6 re f
+BT /F2 8.8 Tf 42.00 169.00 Td (INDIAN INSTITUTE OF INFORMATION TECHNOLOGY BHOPAL \(IIIT Bhopal\), India) Tj ET
+BT /F1 8.6 Tf 42.00 157.00 Td (Bachelor of Technology, Computer Science and Engineering \(CSE\)) Tj ET
+BT /F1 8.6 Tf 386.00 157.00 Td (CGPA: 8.56/10) Tj ET
+BT /F1 8.6 Tf 386.00 145.00 Td (July 2019 - May 2023) Tj ET
+BT /F2 11 Tf 42.00 125.00 Td (CERTIFICATIONS) Tj ET
+42.00 121.00 511.00 0.6 re f
+51.00 109.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 107.00 Td (AWS Cloud Practitioner \(09/2021 - 09/2024\)) Tj ET
+51.00 96.00 1.65 0 360 arc f
+BT /F1 8.4 Tf 62.00 94.00 Td (AWS Certified Solutions Architect \(10/2023 - 10/2026\)) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+7220
+%%EOF
