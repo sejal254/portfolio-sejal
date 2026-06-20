@@ -24,9 +24,12 @@ import {
   profile,
   projects,
   skillCategories,
+  whatIDo,
 } from "@/data/portfolio";
 import { CursorGlow, LoadingScreen, ScrollProgress } from "@/components/site-effects";
 import { ThreeHero } from "@/components/three-hero";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 34 },
@@ -149,11 +152,8 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="mb-6 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">
-            Available for backend, cloud, and platform engineering
-          </div>
           <h1 className="font-display text-5xl font-semibold tracking-tight text-white sm:text-7xl lg:text-8xl">
-            Hi, I&apos;m <span className="gradient-text">{profile.name}</span>
+            <span className="gradient-text">{profile.name}</span>
           </h1>
           <p className="mt-4 text-2xl font-semibold text-cyan-200 sm:text-3xl">
             {profile.title}
@@ -172,24 +172,24 @@ function HeroSection() {
               href="#contact"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-4 font-semibold text-white transition hover:bg-white/10"
             >
-              Contact Me <ArrowUpRight className="h-5 w-5" />
-            </a>
-            <a
-              href="#experience"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-7 py-4 font-semibold text-cyan-100 transition hover:bg-cyan-300/15"
-            >
-              Explore Experience <ArrowDown className="h-5 w-5" />
+              Let&apos;s Connect <ArrowUpRight className="h-5 w-5" />
             </a>
           </div>
+          <p className="mt-6 text-sm font-medium text-slate-400 sm:text-base">
+            4+ Years Experience <span className="px-2 text-cyan-300">•</span> AWS Certified{" "}
+            <span className="px-2 text-cyan-300">•</span> Amagi
+          </p>
         </motion.div>
         <motion.div
-          className="relative h-[360px] sm:h-[500px] lg:h-[620px]"
+          className="relative h-[340px] sm:h-[460px] lg:h-[560px]"
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
         >
-          <div className="absolute inset-6 rounded-full bg-cyan-400/20 blur-3xl" />
-          <ThreeHero />
+          <div className="absolute inset-8 rounded-full bg-cyan-400/14 blur-3xl" />
+          <div className="glass-card h-full overflow-hidden rounded-[2.5rem]">
+            <ThreeHero />
+          </div>
         </motion.div>
       </div>
       <a
@@ -203,9 +203,38 @@ function HeroSection() {
   );
 }
 
+function WhatIDoSection() {
+  return (
+    <AnimatedSection id="what-i-do" eyebrow="Systems Focus" title="What I Do">
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {whatIDo.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <motion.article
+              key={item.title}
+              className="glass-card group rounded-[2rem] p-6"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -8, rotateX: 2, rotateY: index % 2 === 0 ? -2 : 2 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.06 }}
+            >
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200 ring-1 ring-cyan-300/20">
+                <Icon className="h-6 w-6" />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-white">{item.title}</h3>
+              <p className="mt-3 leading-7 text-slate-300">{item.description}</p>
+            </motion.article>
+          );
+        })}
+      </div>
+    </AnimatedSection>
+  );
+}
+
 function AboutSection() {
   return (
-    <AnimatedSection id="about" eyebrow="About" title="Engineering reliable systems with polish.">
+    <AnimatedSection id="about" eyebrow="Profile" title="About Me">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="glass-card rounded-[2rem] p-7 sm:p-9">
           <p className="text-lg leading-8 text-slate-300">
@@ -261,7 +290,7 @@ function AboutSection() {
 
 function ExperienceSection() {
   return (
-    <AnimatedSection id="experience" eyebrow="Experience" title="Interactive timeline of backend impact.">
+    <AnimatedSection id="experience" eyebrow="Production Impact" title="Professional Experience">
       <div className="relative mx-auto max-w-5xl">
         <div className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-cyan-300 via-blue-500 to-transparent sm:block" />
         <div className="space-y-7">
@@ -279,7 +308,11 @@ function ExperienceSection() {
             >
               <div className="absolute -left-[3.85rem] top-8 hidden h-8 w-8 rounded-full border-4 border-[#050816] bg-gradient-to-br from-cyan-300 to-blue-600 sm:block" />
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                <div>
+                <div className="flex gap-4">
+                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 font-display text-sm font-semibold text-cyan-100">
+                    {experience.company.slice(0, 2).toUpperCase()}
+                  </div>
+                  <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
                     {experience.period}
                   </p>
@@ -287,13 +320,18 @@ function ExperienceSection() {
                     {experience.role} at {experience.company}
                   </h3>
                   <p className="mt-2 text-sm text-slate-400">{experience.location}</p>
+                  </div>
                 </div>
                 {experience.highlighted ? (
                   <span className="w-fit rounded-full bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100">
-                    Amagi Highlight
+                    Current Role
                   </span>
                 ) : null}
               </div>
+              <div className="mt-7 rounded-3xl border border-white/10 bg-white/[0.035] p-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
+                  Key Contributions
+                </p>
               <ul className="mt-5 max-w-4xl space-y-3 text-slate-300">
                 {experience.highlights.map((highlight) => (
                   <li key={highlight} className="flex gap-3 leading-7">
@@ -302,6 +340,16 @@ function ExperienceSection() {
                   </li>
                 ))}
               </ul>
+              </div>
+              <div className="mt-5 rounded-3xl border border-blue-300/10 bg-blue-300/[0.04] p-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
+                  Impact
+                </p>
+                <p className="mt-3 leading-7 text-slate-300">{experience.impact}</p>
+              </div>
+              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
+                Technology Stack
+              </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 {experience.technologies.map((tech) => (
                   <span
@@ -322,12 +370,12 @@ function ExperienceSection() {
 
 function ProjectsSection() {
   return (
-    <AnimatedSection id="projects" eyebrow="Projects" title="3D cards for production-minded builds.">
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <AnimatedSection id="projects" eyebrow="Case Studies" title="Featured Projects">
+      <div className="grid gap-6 lg:grid-cols-2">
         {projects.map((project, index) => (
           <motion.article
             key={project.title}
-            className="glass-card group flex min-h-[340px] transform-gpu flex-col rounded-[2rem] p-6"
+            className="glass-card group flex min-h-[420px] transform-gpu flex-col rounded-[2rem] p-7"
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -12, rotateX: 4, rotateY: index % 2 === 0 ? -4 : 4 }}
@@ -348,7 +396,20 @@ function ProjectsSection() {
               </div>
             </div>
             <h3 className="font-display text-2xl font-semibold text-white">{project.title}</h3>
-            <p className="mt-4 flex-1 leading-7 text-slate-300">{project.description}</p>
+            <div className="mt-6 grid gap-4">
+              {[
+                ["Problem", project.problem],
+                ["Solution", project.solution],
+                ["Impact", project.impact],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-3xl border border-white/10 bg-white/[0.035] p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">
+                    {label}
+                  </p>
+                  <p className="mt-2 leading-7 text-slate-300">{value}</p>
+                </div>
+              ))}
+            </div>
             <div className="mt-6 flex flex-wrap gap-2">
               {project.stack.map((item) => (
                 <span key={item} className="rounded-full bg-white/[0.06] px-3 py-1 text-xs text-cyan-100">
@@ -373,7 +434,7 @@ function ProjectsSection() {
 
 function SkillsSection() {
   return (
-    <AnimatedSection id="skills" eyebrow="Skills" title="Animated technical categories.">
+    <AnimatedSection id="skills" eyebrow="Engineering Toolkit" title="Technical Expertise">
       <div className="glass-card relative overflow-hidden rounded-[2.25rem] p-6 sm:p-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.16),transparent_34rem)]" />
         <div className="relative grid gap-6 lg:grid-cols-2">
@@ -403,11 +464,26 @@ function SkillsSection() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-white/10 bg-slate-950/40 px-3 py-2 text-sm text-slate-200"
+                      className="skill-sphere rounded-full border border-white/10 bg-slate-950/40 px-3 py-2 text-sm text-slate-200"
                     >
                       {skill}
                     </span>
                   ))}
+                </div>
+                <div className="mt-6">
+                  <div className="mb-2 flex items-center justify-between text-xs text-slate-400">
+                    <span>Production exposure</span>
+                    <span>{category.proficiency}%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-slate-950/70">
+                    <motion.div
+                      className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-blue-600"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${category.proficiency}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: index * 0.06 }}
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -420,7 +496,7 @@ function SkillsSection() {
 
 function EducationSection() {
   return (
-    <AnimatedSection id="education" eyebrow="Education" title="Computer science foundation.">
+    <AnimatedSection id="education" eyebrow="Academic Foundation" title="Education">
       <motion.div
         className="glass-card rounded-[2.25rem] p-7 sm:p-10"
         whileHover={{ y: -8, rotateX: 2 }}
@@ -449,7 +525,7 @@ function EducationSection() {
 
 function CertificationsSection() {
   return (
-    <AnimatedSection id="certifications" eyebrow="Certifications" title="AWS certified cloud expertise.">
+    <AnimatedSection id="certifications" eyebrow="Cloud Credentials" title="Certifications">
       <div className="grid gap-6 md:grid-cols-2">
         {certifications.map((certification, index) => (
           <motion.article
@@ -479,7 +555,7 @@ function CloudBadge() {
 
 function ResumeSection() {
   return (
-    <AnimatedSection id="resume" eyebrow="Resume" title="Premium resume preview.">
+    <AnimatedSection id="resume" eyebrow="Resume" title="Resume">
       <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <motion.div
           className="glass-card relative rounded-[2.25rem] p-5 sm:p-8"
@@ -495,6 +571,18 @@ function ResumeSection() {
           </div>
         </motion.div>
         <div>
+          <div className="mb-6 flex flex-wrap gap-3">
+            {["Senior Software Engineer", "AWS Certified Solutions Architect", "IIIT Bhopal Graduate"].map(
+              (item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100"
+                >
+                  {item}
+                </span>
+              ),
+            )}
+          </div>
           <p className="text-lg leading-8 text-slate-300">
             A concise snapshot of Sejal&apos;s senior backend engineering experience across
             Amagi, KreditBee, AWS cloud systems, resilience testing, media workflows, data
@@ -524,14 +612,76 @@ function ResumeSection() {
 }
 
 function ContactSection() {
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+  const [formError, setFormError] = useState("");
+  const [startedAt] = useState(() => Date.now());
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const company = String(formData.get("company") || "").trim();
+
+    setFormError("");
+    setFormStatus("idle");
+
+    if (!name || !email || !message) {
+      setFormError("Please fill in your name, email, and message.");
+      setFormStatus("error");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setFormError("Please enter a valid email address.");
+      setFormStatus("error");
+      return;
+    }
+
+    if (message.length < 20) {
+      setFormError("Please enter a message with at least 20 characters.");
+      setFormStatus("error");
+      return;
+    }
+
+    setFormStatus("sending");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          company,
+          startedAt,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      event.currentTarget.reset();
+      setFormStatus("success");
+    } catch {
+      setFormStatus("error");
+      setFormError("Failed to send message. Please try again.");
+    }
+  }
+
   return (
-    <AnimatedSection id="contact" eyebrow="Contact" title="Let's build something scalable.">
+    <AnimatedSection id="contact" eyebrow="Contact" title="Let's Connect">
       <div className="glass-card rounded-[2.25rem] p-7 sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="max-w-2xl text-lg leading-8 text-slate-300">
-              Reach out for backend engineering roles, cloud platform work, API design,
-              distributed systems, or polished full-stack products.
+              Open to software engineering opportunities, technical discussions, and collaborations.
             </p>
             <a
               href={`mailto:${profile.email}`}
@@ -544,6 +694,17 @@ function ContactSection() {
           </div>
           <div className="space-y-5">
             <div className="grid gap-4 sm:grid-cols-2">
+              <a
+                href="/resume/sejal-nayak-resume.pdf"
+                download
+                className="group flex items-center justify-between rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5 transition hover:border-cyan-300/40 hover:bg-cyan-300/15"
+              >
+                <span className="flex items-center gap-4 text-base font-semibold text-white">
+                  <Download className="h-5 w-5 text-cyan-300" />
+                  Resume Download
+                </span>
+                <ArrowUpRight className="h-5 w-5 text-slate-400 transition group-hover:text-cyan-200" />
+              </a>
               {contactLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -563,31 +724,59 @@ function ContactSection() {
                 );
               })}
             </div>
-            <form className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5">
+            <form
+              className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5"
+              onSubmit={handleSubmit}
+            >
+              <input
+                aria-hidden="true"
+                tabIndex={-1}
+                autoComplete="off"
+                name="company"
+                className="hidden"
+              />
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
                   aria-label="Name"
+                  name="name"
                   placeholder="Your name"
+                  required
                   className="rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/50"
                 />
                 <input
                   aria-label="Email"
+                  name="email"
                   type="email"
                   placeholder="Your email"
+                  required
                   className="rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/50"
                 />
               </div>
               <textarea
                 aria-label="Message"
+                name="message"
                 placeholder="Tell me about the role, team, or opportunity"
                 rows={5}
+                minLength={20}
+                required
                 className="mt-4 w-full resize-none rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/50"
               />
+              {formStatus === "success" ? (
+                <p className="mt-4 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-sm font-semibold text-cyan-100">
+                  Thanks for reaching out! I&apos;ll get back to you soon.
+                </p>
+              ) : null}
+              {formStatus === "error" ? (
+                <p className="mt-4 rounded-2xl border border-red-300/20 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-100">
+                  {formError || "Failed to send message. Please try again."}
+                </p>
+              ) : null}
               <button
                 type="submit"
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-600 px-6 py-3 font-semibold text-slate-950"
+                disabled={formStatus === "sending"}
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-300 to-blue-600 px-6 py-3 font-semibold text-slate-950 transition disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message <Send className="h-4 w-4" />
+                {formStatus === "sending" ? "Sending..." : "Send Message"} <Send className="h-4 w-4" />
               </button>
             </form>
           </div>
@@ -605,6 +794,7 @@ export function PortfolioPage() {
       <CursorGlow />
       <Navigation />
       <HeroSection />
+      <WhatIDoSection />
       <AboutSection />
       <ExperienceSection />
       <ProjectsSection />
